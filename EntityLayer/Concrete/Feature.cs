@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
+    //Feature kısmında soldaki tekli büyük resmin olduğu yer olacak.
     public class Feature
     {
         [Key]

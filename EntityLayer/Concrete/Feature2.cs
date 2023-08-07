@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
-{
+{   
+    //Feature2 kısmında sağdaki küçük resimlerden oluşan grup olacak.
     public class Feature2
     {
         [Key]
