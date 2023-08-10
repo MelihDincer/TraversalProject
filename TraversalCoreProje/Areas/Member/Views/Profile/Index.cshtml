@@ -1,0 +1,34 @@
+﻿@model TraversalCoreProje.Areas.Member.Models.UserEditViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Profil Düzenleme Sayfası</h1>
+<form method="post" enctype="multipart/form-data">  @*Dosya Kaydetme işlemi için enctype eklendi.*@
+    <label>Adınız</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <br />
+    <label>Soyadınız</label>
+    <input type="text" asp-for="Surname" class="form-control" />
+    <br />
+    <label>Mail Adresiniz</label>
+    <input type="text" asp-for="Mail" class="form-control" />
+    <br />
+    <label>Şifreniz</label>
+    <input type="password" asp-for="Password" class="form-control" />
+    <br />
+    <label>Şifre Tekrar</label>
+    <input type="password" asp-for="ConfirmPassword" class="form-control" />
+    <br />
+    <label>Telefon Numarası</label>
+    <input type="text" asp-for="PhoneNumber" class="form-control" />
+    <br />
+    <div class="form-group">
+        <label>Resim Seçin</label>
+        <input type="file" asp-for="Image" />
+    </div>
+    <br />
+    <button class="btn btn-primary">Bilgileri Güncelle</button>
+
+</form>
