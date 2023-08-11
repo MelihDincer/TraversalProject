@@ -1,0 +1,53 @@
+﻿@model EntityLayer.Concrete.Reservation
+@{
+    ViewData["Title"] = "NewReservation";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            $('#messageModal').fadeIn(2000);
+        });
+        setTimeout(function () {
+            $('#messageModal').fadeOut(3000);
+        });
+    })
+</script>
+
+<div class="modal" tabindex="-1" role="dialog" id="messageModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>
+                    Rezervasyonunuz başlangıçta onay bekliyor şeklinde alınacaktır.Rezervasyon onaylanma süreci için güncel rezervasyonlarım menüsünü takip etmeyi unutmayın
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1>Yeni Rezervasyon Sayfası</h1>
+<form method="post">
+    <div class="form-group">
+        <label>Lokasyon</label>
+        <select asp-for="Destination" asp-items="ViewBag.v" class="form-control">
+            <option>Lütfen bir lokasyon seçiniz..</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Kişi Sayısı</label>
+        <input type="text" asp-for="PersonCount" class="form-control" />
+    </div>
+    @*<input type="hidden" asp-for="AppUserId" value="@ViewBag.userid" />*@
+    <div class="form-group">
+        <label>Tarih</label>
+        <input type="date" asp-for="ReservastionDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Varsa Eklemek İstedikleriniz</label>
+        <input type="text" asp-for="Description" class="form-control" />
+    </div>
+    <button class="btn btn-outline-success">Rezervasyon Yap</button>
+</form>
