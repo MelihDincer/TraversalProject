@@ -1,0 +1,46 @@
+﻿@using EntityLayer.Concrete
+@model List<Destination>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="table-responsive text-nowrap">
+    <table class="table card-table mt-4">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Şehir</th>
+                <th>Fiyat</th>
+                <th>Kapasite</th>
+                <th>Sitede Gör</th>
+                <th>İşlem</th>
+            </tr>
+        </thead>
+        <tbody class="table-border-bottom-0">
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td><strong>@item.DestinationID</strong></td>
+                    <td>@item.City</td>
+                    <td>@item.Price</td>
+                    <td><span class="badge bg-label-primary me-1">@item.Capacity</span></td>
+                    <td><a class="btn btn-outline-info btn-sm" href="/Destination/DestinationDetails/@item.DestinationID"> Sitede Görüntüle</a></td>
+                    <td>
+                        <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/Admin/Destination/UpdateDestination/@item.DestinationID"><i class="bx bx-edit-alt me-1"></i> Düzenle</a>
+                                <a class="dropdown-item" href="/Admin/Destination/DeleteDestination/@item.DestinationID" onclick="return confirm('Bu turu silmek isteğinize emin misiniz?')"><i class="bx bx-trash me-1"></i> Sil</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Admin/Destination/AddDestination/" class="btn btn-outline-primary">Yeni Tur Rotası</a>
+</div>
+
