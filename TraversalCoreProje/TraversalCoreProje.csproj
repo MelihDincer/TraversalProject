@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Areas\Admin\Views\Shared\Components\_Cards1Statistic\Default.cshtml" />
+    <None Include="Areas\Admin\Views\Shared\Components\_Cards2Statistic\Default.cshtml" />
+    <None Include="Areas\Admin\Views\Shared\Components\_DashboardBanner\Default.cshtml" />
+    <None Include="Areas\Admin\Views\Shared\Components\_TotalRevenue\Default.cshtml" />
     <None Include="wwwroot\sneat-1.0.0\.github\workflows\handle-new-issue-comment.yml" />
     <None Include="wwwroot\sneat-1.0.0\.github\workflows\handle-new-issue.yml" />
     <None Include="wwwroot\sneat-1.0.0\.github\workflows\issue-staler.yml" />
@@ -368,6 +372,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="3.0.0" />
   </ItemGroup>
 
   <ItemGroup>
