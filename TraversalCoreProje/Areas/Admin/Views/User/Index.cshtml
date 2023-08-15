@@ -1,0 +1,53 @@
+﻿@using EntityLayer.Concrete
+@model List<AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<h3 class="mt-3">Kullanıcı Listesi</h3>
+
+<div class="table-responsive text-nowrap">
+    <table class="table card-table mt-4">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Ad Soyad</th>
+                <th>Kullanıcı Adı</th>
+                <th>Mail</th>
+                <th>Yorumlar</th>
+                <th>Tur Geçmişi</th>
+                <th>İşlem</th>
+            </tr>
+        </thead>
+        <tbody class="table-border-bottom-0">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @{
+                        count++; 
+                    }
+                    <td><small>@count</small></td>
+                    <td><small>@item.Name @item.Surname</small></td>
+                    <td><small>@item.UserName</small></td>
+                    <td><small>@item.Email</small></td>
+                    <td><a href="/Admin/User/CommentUser/@item.Id" class="btn btn-sm btn-info">Yorumlar</a></td>
+                    <td><a href="/Admin/User/ReservationUser/@item.Id" class="btn btn-sm btn-dark">Tur Geçmişi</a></td>
+                    <td>
+                        <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/Admin/User/EditUser/@item.Id"><i class="bx bx-edit-alt me-1"></i> <small>Düzenle</small></a>
+                                <a class="dropdown-item" href="/Admin/User/DeleteUser/@item.Id" onclick="return confirm('Bu üyeyi silmek isteğinize emin misiniz?')"><i class="bx bx-trash me-1"></i> <small>Sil</small></a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<a href="/Login/SignUp/" class="btn btn-sm btn-outline-primary">Yeni Kullanıcı Kaydı</a>
