@@ -1,0 +1,70 @@
+﻿@using EntityLayer.Concrete
+@model List<Guide>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<h3 class="mt-3">Rehber Listesi</h3>
+
+<div class="table-responsive text-nowrap">
+    <table class="table card-table mt-4">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Görsel</th>
+                <th>Ad Soyad</th>
+                <th>Açıklama</th>
+                <th>Durum</th>
+                <th>İşlem</th>
+            </tr>
+        </thead>
+        <tbody class="table-border-bottom-0">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @{
+                        count++;
+                    }
+                    <td><small>@count</small></td>
+                    <td>
+                        <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                            <li data-bs-toggle="tooltip"
+                                data-popup="tooltip-custom"
+                                data-bs-placement="top"
+                                class="avatar avatar-xs pull-up"
+                                title="Lilian Fuller">
+                                <img src="@item.Image" alt="" class="rounded-circle" />
+                            </li>
+                        </ul>
+                    </td>
+                    <td><small>@item.Name</small></td>
+                    <td><small>@item.Description</small></td>
+
+                    @if(item.Status == true)
+                    {
+                        <td><a href="#" class="badge bg-label-danger me-1">Pasif Yap</a></td>
+                    }
+                    else
+                    {
+                        <td><a href="#" class="badge bg-label-info me-1">Aktif Yap</a></td>
+                    }
+
+                    <td>
+                        <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/Admin/User/EditUser/@item.GuideID"><i class="bx bx-edit-alt me-1"></i> <small>Düzenle</small></a>
+                                <a class="dropdown-item" href="/Admin/User/DeleteUser/@item.GuideID" onclick="return confirm('Bu üyeyi silmek isteğinize emin misiniz?')"><i class="bx bx-trash me-1"></i> <small>Sil</small></a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<a href="/Admin/Guide/AddGuide/" class="btn btn-sm btn-outline-primary">Yeni Rehber Kaydı</a>
