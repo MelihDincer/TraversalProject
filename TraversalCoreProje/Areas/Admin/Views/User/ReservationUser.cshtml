@@ -1,0 +1,40 @@
+﻿@using EntityLayer.Concrete
+@model List<Reservation>
+@{
+    ViewData["Title"] = "ReservationUser";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int sayac = 0;
+}
+
+<h3 class="mt-3">Kullanıcının Geçmiş Rezervasyonları</h3>
+
+<div class="table-responsive text-nowrap">
+    <table class="table card-table mt-4">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Misafir Ad Soyad</th>
+                <th>Rota</th>
+                <th>Kişi Sayısı</th>
+                <th>Tarih</th>
+                <th>Detaylar</th>
+            </tr>
+        </thead>
+        <tbody class="table-border-bottom-0">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @{
+                        sayac++;
+                    }
+                    <td><small>@sayac</small></td>
+                    <td><small>@ViewBag.username</small></td>
+                    <td><small>@item.Destination.City</small></td>
+                    <td><span class="badge bg-label-primary me-1"><small>@item.PersonCount</small></span></td>
+                    <td><span class="badge bg-label-danger me-1"><small>@item.ReservastionDate.ToString("dd MMM yyyy")</small></span></td>
+                    <td><a href="/Admin/User/CommentUser/@item.AppUserId" class="btn btn-sm btn-dark">Detaylar</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
