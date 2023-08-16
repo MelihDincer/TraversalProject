@@ -10,21 +10,29 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BusinessLayer.Container
-{
+{ 
     public static class Extensions
     {
+        //DI Container
         public static void ContainerDependencies(this IServiceCollection services) //Startup tarafında class ı newlememek için "this" keywordu kullanıldı. Haliyle static yapılar kullanıldı.
         {
             services.AddScoped<ICommentService, CommentManager>();
             services.AddScoped<ICommentDal, EfCommentDal>();
+
             services.AddScoped<IDestinationService, DestinationManager>();
             services.AddScoped<IDestinationDal, EfDestinationDal>();
+
             services.AddScoped<IAppUserService, AppUserManager>();
             services.AddScoped<IAppUserDal, EfAppUserDal>();
+
             services.AddScoped<IReservationService, ReservationManager>();
             services.AddScoped<IReservationDal, EfReservationDal>();
+
             services.AddScoped<IGuideService, GuideManager>();
             services.AddScoped<IGuideDal, EfGuideDal>();
+
+            services.AddScoped<IExcelService, ExcelManager>();
+            services.AddScoped<IPdfService, PdfManager>();
         }
     }
 }
