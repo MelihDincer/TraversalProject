@@ -1,0 +1,34 @@
+﻿@model EntityLayer.Concrete.Guide
+@{
+    ViewData["Title"] = "AddGuide";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Yeni Tur Organizasyonu Ekleme Sayfası</h3>
+<br>
+<form method="post">
+    <div class="form-group mb-3">
+        <label>Ad Soyad</label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label>Fotoğraf</label>
+        <input type="text" asp-for="Image" class="form-control" />
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label>Instagram Url</label>
+        <input type="text" asp-for="InstagramUrl" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label>Twitter Url</label>
+        <input type="text" asp-for="TwitterUrl" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label>Açıklama</label>
+        <input type="text" asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <button class="btn btn-outline-primary">Oluştur</button>
+</form>
