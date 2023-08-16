@@ -358,7 +358,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.102.0" />
+    <PackageReference Include="EPPlus" Version="6.0.7" />
     <PackageReference Include="FluentValidation" Version="10.3.6" />
+    <PackageReference Include="iTextSharp.LGPLv2.Core" Version="1.9.2" />
+    <PackageReference Include="MailKit" Version="3.4.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.12" />
@@ -385,6 +389,7 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Member\Data\" />
+    <Folder Include="wwwroot\pdfreports\" />
     <Folder Include="wwwroot\userimages\" />
     <Folder Include="wwwroot\soft-ui-dashboard\.git\objects\info\" />
     <Folder Include="wwwroot\soft-ui-dashboard\.git\objects\pack\" />
