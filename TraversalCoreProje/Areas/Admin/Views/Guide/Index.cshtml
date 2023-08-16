@@ -44,11 +44,11 @@
 
                     @if(item.Status == true)
                     {
-                        <td><a href="#" class="badge bg-label-danger me-1">Pasif Yap</a></td>
+                        <td><a href="/Admin/Guide/ChangeToFalse/@item.GuideID" class="badge bg-label-danger me-1">Pasif Yap</a></td>
                     }
                     else
                     {
-                        <td><a href="#" class="badge bg-label-info me-1">Aktif Yap</a></td>
+                        <td><a href="/Admin/Guide/ChangeToTrue/@item.GuideID" class="badge bg-label-info me-1">Aktif Yap</a></td>
                     }
 
                     <td>
@@ -57,8 +57,8 @@
                                 <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Admin/User/EditUser/@item.GuideID"><i class="bx bx-edit-alt me-1"></i> <small>Düzenle</small></a>
-                                <a class="dropdown-item" href="/Admin/User/DeleteUser/@item.GuideID" onclick="return confirm('Bu üyeyi silmek isteğinize emin misiniz?')"><i class="bx bx-trash me-1"></i> <small>Sil</small></a>
+                                <a class="dropdown-item" href="/Admin/Guide/EditGuide/@item.GuideID"><i class="bx bx-edit-alt me-1"></i> <small>Düzenle</small></a>
+                                <a class="dropdown-item" href="/Admin/Guide/DeleteGuide/@item.GuideID" onclick="return confirm('Bu üyeyi silmek isteğinize emin misiniz?')"><i class="bx bx-trash me-1"></i> <small>Sil</small></a>
                             </div>
                         </div>
                     </td>
