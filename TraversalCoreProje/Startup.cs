@@ -1,23 +1,14 @@
-using BusinessLayer.Abstract;
-using BusinessLayer.Concrete;
 using BusinessLayer.Container;
-using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
-using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Newtonsoft.Json.Schema;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using TraversalCoreProje.Models;
 
 namespace TraversalCoreProje
@@ -39,7 +30,11 @@ namespace TraversalCoreProje
 
             services.ContainerDependencies(); //Business katmanýnda Container klasörü içinde tanýmladýðýmýz Extensions class içerisindeki metoda direkt eriþim saðladýk.
 
-			services.AddControllersWithViews();
+            services.AddAutoMapper(typeof(Startup)); //AutoMapper dahil edildi.
+
+            services.CustomerValidator(); //Extension içerisindeki customervalidator u burada çaðýrdýk. Yukarýdaki containerdependencies gibi.
+
+            services.AddControllersWithViews().AddFluentValidation(); //FluentValidation dahil edildi.
 
             services.AddMvc(config =>
             {
