@@ -14,50 +14,52 @@ namespace TraversalCoreProje.Areas.Member.Controllers
     [Area("Member")]
     public class ReservationController : Controller
     {
-        DestinationManager destinationManager = new DestinationManager(new EfDestinationDal());
-        ReservationManager reservationManager = new ReservationManager(new EfReservationDal());
-        private readonly UserManager<AppUser> _userManager;
+        //DestinationManager destinationManager = new DestinationManager(new EfDestinationDal());
+        //ReservationManager reservationManager = new ReservationManager(new EfReservationDal());
+        //private readonly UserManager<AppUser> _userManager;
 
-        public ReservationController(UserManager<AppUser> userManager)
-        {
-            _userManager = userManager;
-        }
+        //public ReservationController(UserManager<AppUser> userManager)
+        //{
+        //    _userManager = userManager;
+        //}
 
         //DEPENDENCY INJECTION KULLANIMI ile EF BAĞIMLILIĞI ORTADAN KALKTI.
-        //private readonly IDestinationService _destinationService;
-        //private readonly IReservationService _reservationService;
+        private readonly IDestinationService _destinationService;
+        private readonly IReservationService _reservationService;
+        private readonly UserManager<AppUser> _userManager;
 
-        //public ReservationController(IDestinationService destinationService, IReservationService reservationService)
-        //{
-        //    _destinationService = destinationService;
-        //    _reservationService = reservationService;
-        //}
+        public ReservationController(IDestinationService destinationService, IReservationService reservationService, UserManager<AppUser> userManager)
+        {
+            _destinationService = destinationService;
+            _reservationService = reservationService;
+            _userManager = userManager;
+        }
 
         //Onaylanan rezervasyonlar
         public async Task<IActionResult> MyCurrentReservation()
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            var values = reservationManager.GetListWithReservationByAccepted(user.Id);
+            var values = _reservationService.GetListWithReservationByAccepted(user.Id);
             return View(values);
         }
         //Geçmiş rezervasyonlar
         public async Task<IActionResult> MyOldReservation()
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            var values = reservationManager.GetListWithReservationByPrevious(user.Id);
+            var values = _reservationService.GetListWithReservationByPrevious(user.Id);
             return View(values);
         }
         //Onay Bekleyen rezervasyonlar
         public async Task<IActionResult> MyApprovalReservation()
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            var values = reservationManager.GetListWithReservationByWaitApproval(user.Id);
+            var values = _reservationService.GetListWithReservationByWaitApproval(user.Id);
             return View(values);
         }
         [HttpGet]
         public IActionResult NewReservation()
         {
-            List<SelectListItem> values = (from x in destinationManager.TGetList()
+            List<SelectListItem> values = (from x in _destinationService.TGetList()
                                            select new SelectListItem
                                            {
                                                Text = x.City,
@@ -71,7 +73,7 @@ namespace TraversalCoreProje.Areas.Member.Controllers
         {
             p.AppUserId = 2;
             p.Status = "Onay Bekliyor";
-            reservationManager.TAdd(p);
+            _reservationService.TAdd(p);
             return RedirectToAction("MyCurrentReservation");
         }
     }
