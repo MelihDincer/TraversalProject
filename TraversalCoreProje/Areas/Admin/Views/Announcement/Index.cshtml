@@ -1,0 +1,42 @@
+﻿@model List<DTOLayer.DTOs.AnnouncementDTOs.AnnouncementListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3 class="mt-3">Duyuru Listesi</h3>
+<div class="table-responsive text-nowrap">
+    <table class="table card-table mt-4">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Başlık</th>
+                <th>İçerik</th>
+                <th>Düzen</th>
+            </tr>
+        </thead>
+        <tbody class="table-border-bottom-0">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><small>@item.AnnouncementID</small></td>
+                    <td><small>@item.Title</small></td>
+                    <td><small>@item.Content</small></td>
+                    @*<td><a class="btn btn-outline-dark btn-sm" href="/Announcement/AnnouncementDetails/@item.AnnouncementID">Detaylar</a></td>*@
+                    <td>
+                        <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/Admin/Announcement/UpdateAnnouncement/@item.AnnouncementID"><i class="bx bx-edit-alt me-1"></i> <small>Düzenle</small></a>
+                                <a class="dropdown-item" href="/Admin/Announcement/DeleteAnnouncement/@item.AnnouncementID" onclick="return confirm('Bu duyuruyu silmek isteğinize emin misiniz?')"><i class="bx bx-trash me-1"></i> <small>Sil</small></a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Admin/Announcement/AddAnnouncement/" class="btn btn-sm btn-outline-info">Yeni Duyuru Ekle</a>
+</div>
