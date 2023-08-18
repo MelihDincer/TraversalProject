@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TraversalCoreProje.CQRS.Handlers.DestinationHandlers;
 using TraversalCoreProje.Models;
 
 namespace TraversalCoreProje
@@ -25,8 +26,11 @@ namespace TraversalCoreProje
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddDbContext<Context>(); //Proje seviyesinde Authentication uyguladýk.
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>(); //Identity yapýlanmasýný eklemiþ olduk. En sona eklediðimiz AddErrorDescriber ise custom olarak oluþturduðumuz identityvalidatorunu dahil etmek için.
+
+            services.AddHttpClient(); //HttpClient projeye dahil edildi.
 
             services.ContainerDependencies(); //Business katmanýnda Container klasörü içinde tanýmladýðýmýz Extensions class içerisindeki metoda direkt eriþim saðladýk.
 
