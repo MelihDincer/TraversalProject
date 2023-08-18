@@ -1,0 +1,39 @@
+﻿@model List<ContactUs>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<h3 class="mt-3">Bize Ulaşın Mesajları</h3>
+
+<div class="table-responsive text-nowrap">
+    <table class="table card-table mt-4">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Gönderen</th>
+                <th>Konu</th>
+                <th>Tarih</th>
+                <th>Sil</th>
+                <th>Mesajı Aç</th>
+            </tr>
+        </thead>
+        <tbody class="table-border-bottom-0">
+            @foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <th><small>@count</small></th>
+                    <td><small>@item.Name</small></td>
+                    <td><small>@item.Subject</small></td>
+                    <td><span class="badge bg-label-primary me-1"><small>@item.MessageDate.ToString("dd MMM yyyy")</small></span></td>
+                    <td>
+                        <a class="btn btn-sm btn-outline-danger" href="/Admin/ContactUs/DeleteContactUs/@item.ContactUsID" onclick="return confirm('Bu mesajı silmek isteğinize emin misiniz?')"><i class="bx bx-trash me-1"></i> <small>Sil</small></a>
+                    </td>
+                    <td><a href="/Admin/ContactUs/DetailContactUs/@item.ContactUsID" class="btn btn-sm btn-outline-dark">Mesajı Aç</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
