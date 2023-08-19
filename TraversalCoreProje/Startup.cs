@@ -27,6 +27,12 @@ namespace TraversalCoreProje
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddScoped<GetAllDestinationQueryHandler>();
+            services.AddScoped<GetDestinationByIDQueryHandler>();
+            services.AddScoped<CreateDestinationCommandHandler>();
+            services.AddScoped<RemoveDestinationCommandHandler>();
+            services.AddScoped<UpdateDestinationCommandHandler>();
+
             services.AddDbContext<Context>(); //Proje seviyesinde Authentication uyguladýk.
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>(); //Identity yapýlanmasýný eklemiþ olduk. En sona eklediðimiz AddErrorDescriber ise custom olarak oluþturduðumuz identityvalidatorunu dahil etmek için.
 
