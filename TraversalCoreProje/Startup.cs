@@ -2,6 +2,7 @@ using BusinessLayer.Container;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,6 +34,8 @@ namespace TraversalCoreProje
             services.AddScoped<RemoveDestinationCommandHandler>();
             services.AddScoped<UpdateDestinationCommandHandler>();
 
+            services.AddMediatR(typeof(Startup)); //MediatR projeye dahil edildi.
+            
             services.AddDbContext<Context>(); //Proje seviyesinde Authentication uyguladýk.
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>(); //Identity yapýlanmasýný eklemiþ olduk. En sona eklediðimiz AddErrorDescriber ise custom olarak oluþturduðumuz identityvalidatorunu dahil etmek için.
 
