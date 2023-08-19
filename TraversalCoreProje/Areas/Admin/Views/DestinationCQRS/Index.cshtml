@@ -1,0 +1,48 @@
+﻿@model List<GetAllDestinationQueryResult>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<h3 class="mt-3">CQRS Tur Verileri</h3>
+<br />
+<div class="table-responsive text-nowrap">
+    <table class="table card-table mt-4">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Şehir</th>
+                <th>Gün-Gece</th>
+                <th>Fiyat</th>
+                <th>Kapasite</th>
+                <th>Düzen</th>
+            </tr>
+        </thead>
+        <tbody class="table-border-bottom-0">
+            @foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <th><small>@count</small></th>
+                    <td><small>@item.city</small></td>
+                    <td><small>@item.daynight</small></td>
+                    <td><small>@item.price ₺</small></td>
+                    <td><span class="badge bg-label-danger me-1"><small>@item.capacity</small></span></td>
+                    <td>
+                        <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/Admin/DestinationCQRS/GetDestination/@item.id"><i class="bx bx-edit-alt me-1"></i> <small>Düzenle</small></a>
+                                <a class="dropdown-item" href="/Admin/DestinationCQRS/DeleteDestination/@item.id" onclick="return confirm('Bu veriyi silmek isteğinize emin misiniz?')"><i class="bx bx-trash me-1"></i> <small>Sil</small></a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Admin/DestinationCQRS/AddDestination/" class="btn btn-sm btn-info">Yeni Tur Rotası Girişi</a>
+</div>
