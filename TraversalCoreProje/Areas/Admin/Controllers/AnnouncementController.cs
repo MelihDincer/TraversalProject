@@ -13,7 +13,7 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
     public class AnnouncementController : Controller
     {
         private readonly IAnnouncementService _announcementService;
-        private readonly IMapper _mapper;
+        private readonly IMapper _mapper; //DTO tarafında eşleştirdiğimiz için mapperdan örnek aldık.
 
         public AnnouncementController(IAnnouncementService announcementService, IMapper mapper)
         {
