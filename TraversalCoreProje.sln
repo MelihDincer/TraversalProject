@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTOLayer", "DTOLayer\DTOLayer.csproj", "{F4EDEA65-4E53-43BB-898A-A4A5E7768A53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRApi", "SignalRApi\SignalRApi.csproj", "{14BEB988-94CC-4E23-97AE-6D8EA449FD86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F4EDEA65-4E53-43BB-898A-A4A5E7768A53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4EDEA65-4E53-43BB-898A-A4A5E7768A53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4EDEA65-4E53-43BB-898A-A4A5E7768A53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14BEB988-94CC-4E23-97AE-6D8EA449FD86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14BEB988-94CC-4E23-97AE-6D8EA449FD86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14BEB988-94CC-4E23-97AE-6D8EA449FD86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14BEB988-94CC-4E23-97AE-6D8EA449FD86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
