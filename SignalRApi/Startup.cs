@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SignalRApi.DAL;
+using SignalRApi.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,14 +28,16 @@ namespace SignalRApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddEntityFrameworkNpgsql().AddDbContext<ApiContext>(opt =>
+            services.AddScoped<VisitorService>();
+            services.AddSignalR();
+            services.AddEntityFrameworkNpgsql().AddDbContext<ApiAppContext>(opt =>
             opt.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            
             services.AddControllers();
-
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "SignalRApi", Version = "v1" });
-            //});
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SignalRApi", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
