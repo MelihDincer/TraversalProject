@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using SignalRApi.DAL;
-using SignalRApi.DAL.Hubs;
+using SignalRApi.Hubs;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;

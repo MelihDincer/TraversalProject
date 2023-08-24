@@ -8,7 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SignalRApi.DAL;
-using SignalRApi.DAL.Hubs;
+using SignalRApi.Hubs;
 using SignalRApi.Model;
 using System;
 using System.Collections.Generic;

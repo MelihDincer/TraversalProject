@@ -2,7 +2,7 @@
 using SignalRApi.Model;
 using System.Threading.Tasks;
 
-namespace SignalRApi.DAL.Hubs
+namespace SignalRApi.Hubs
 {
     public class VisitorHub : Hub
     {
