@@ -91,6 +91,26 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
 
         [HttpGet]
         [Route("{id}")]
+        public async Task<IActionResult> AssignRole(int id)
+        {
+            var user = _userManager.Users.FirstOrDefault(x => x.Id == id);
+            TempData["Userid"] = user.Id;
+            var roles = _roleManager.Roles.ToList();
+            var userRoles = await _userManager.GetRolesAsync(user);
+            List<RoleAssignViewModel> roleAssignViewModels = new List<RoleAssignViewModel>();
+            foreach (var item in roles)
+            {
+                RoleAssignViewModel model = new RoleAssignViewModel();
+                model.RoleID = item.Id;
+                model.RoleName = item.Name;
+                model.RoleExist = userRoles.Contains(item.Name);
+                roleAssignViewModels.Add(model);
+            }
+            return View(roleAssignViewModels);
+        }
+
+        [HttpPost]
+        [Route("{id}")]
         public async Task<IActionResult> AssignRole(List<RoleAssignViewModel> model)
         {
             var userid = (int)TempData["userid"];
