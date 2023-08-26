@@ -61,7 +61,7 @@ namespace TraversalCoreProje
 
             services.ConfigureApplicationCookie(options =>
             {
-                options.LoginPath = "/Admin/Login/Index/"; //Oturum düþtüðünde/Cookie temizlendiðinde bu sayfaya yönlendir.
+                options.LoginPath = "/Login/SignIn/"; //Oturum düþtüðünde/Cookie temizlendiðinde bu sayfaya yönlendir.
             });
         }
 
