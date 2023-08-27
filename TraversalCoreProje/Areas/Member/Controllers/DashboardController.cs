@@ -24,5 +24,10 @@ namespace TraversalCoreProje.Areas.Member.Controllers
             ViewBag.memberMail = user.Email;
             return View();
         }
+
+        public async Task<IActionResult> MemberDashboard()
+        {
+            return View();
+        }
     }
 }
