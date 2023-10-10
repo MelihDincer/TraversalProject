@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -47,8 +48,11 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
 
         public IActionResult DeleteCity(int id)
         {
+            Destination destination = new Destination();
             var values = _destinationService.TGetByID(id);
-            if (values != null)
+
+
+            if (values != null && values.DestinationID.ToString().Contains(destination.DestinationID.ToString()))
             {
                 _destinationService.TDelete(values);
                 return NoContent();
