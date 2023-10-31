@@ -5,7 +5,7 @@ Bu projede değinilen ve uygulanan konular aşağıdaki listede yer almaktadır.
 #### Projede, farklı tatil rotalarının listelendiği, siteyi ziyaret eden kişilerin sisteme kayıt olmaları ve kişisel bilgilerini düzenleyebildikleri bir kullanıcı paneli arayüzü; yetkili kişinin de sayfa içerisinde çeşitli CRUD işlemlerini yapabildiği bir admin paneli arayüzü olmak üzere toplamda 3 arayüz bulunmaktadır.
 
 *Bu Projede Değinilen Konu Başlıkları:*
-#### Ajax, Api, Api Consume, Google Chart, Raporlama, Unit of Work, CQRS Design Pattern, Repository Design Pattern, Fluent Validaton, Auto Mapper, DI, DTO, Identity, Login, Register, Rolleme, Dashboard, Linq, SignalR, Area, View Component, Include Metotlar, Hata Sayfaları, Mail Gönderme, Şifre Yenileme, Mail Aktivasyonu, Rapid Api, MediatR, Pivot Table, Trigger, Çoklu Dil Desteği, Publish, Deploy ve daha aklıma gelmeyen onlarca konu başlığı
+#### Ajax, Api, Api Consume, Google Chart, Raporlama, Unit of Work, CQRS Design Pattern, Repository Design Pattern, Fluent Validaton, Auto Mapper, DI, DTO, Identity, Login, Register, Rolleme, Dashboard, Linq, SignalR, Area, View Component, Include Metotlar, Hata Sayfaları, Mail Gönderme, Şifre Yenileme, Mail Aktivasyonu, Rapid Api, MediatR, Pivot Table, Trigger, Çoklu Dil Desteği
 
 ![1](https://github.com/melihdincer/TraversalCoreProje/assets/115299123/b90c128f-3869-4496-809a-82e54844f6a9)
 ![19](https://github.com/melihdincer/TraversalCoreProje/assets/115299123/820a5799-8b7a-4fdf-b00b-95118023bf69)
