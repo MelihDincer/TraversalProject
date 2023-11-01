@@ -1,6 +1,6 @@
 ## **TraversalCoreProje**
 #### Merhaba, bu projemizde bir traversal acente sistemi yapmaya çalıştık. Projede eksik bölümler zamanla tamamlanacak olup, geliştirilmeye açık bir projedir.
-Bu projede değinilen ve uygulanan konular aşağıdaki listede yer almaktadır. Proje içi güncel ekran görüntülerinin büyük bir kısmını açıklamanın altında paylaşıyor olacağım.
+Bu projede değinilen ve uygulanan konular aşağıdaki listede yer almaktadır. Proje içi güncel ekran görüntülerinin büyük bir kısmına aşağıdaki açıklamanın sonunda ulaşabilirsiniz.
 ### **Proje İçeriği**
 #### Projede, farklı tatil rotalarının listelendiği, siteyi ziyaret eden kişilerin sisteme kayıt olmaları ve kişisel bilgilerini düzenleyebildikleri bir kullanıcı paneli arayüzü; yetkili kişinin de sayfa içerisinde çeşitli CRUD işlemlerini yapabildiği bir admin paneli arayüzü olmak üzere toplamda 3 arayüz bulunmaktadır.
 
