@@ -1,4 +1,4 @@
-## **TraversalCoreProje**
+## **Traversal Rezervasyon Projesi**
 #### Merhaba, bu projemizde bir traversal acente sistemi yapmaya çalıştık. Projede eksik bölümler zamanla tamamlanacak olup, geliştirilmeye açık bir projedir.
 Bu projede değinilen ve uygulanan konular aşağıdaki listede yer almaktadır. Proje içi güncel ekran görüntülerinin büyük bir kısmına aşağıdaki açıklamanın sonunda ulaşabilirsiniz.
 ### **Proje İçeriği**
