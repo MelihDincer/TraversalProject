@@ -7,6 +7,8 @@ Bu projede değinilen ve uygulanan konular aşağıdaki listede yer almaktadır.
 *Bu Projede Değinilen Konu Başlıkları:*
 #### Ajax, Api, Api Consume, Google Chart, Raporlama, Unit of Work, CQRS Design Pattern, Repository Design Pattern, Fluent Validaton, Auto Mapper, DI, DTO, Identity, Login, Register, Rolleme, Dashboard, Linq, SignalR, Area, View Component, Include Metotlar, Hata Sayfaları, Mail Gönderme, Şifre Yenileme, Mail Aktivasyonu, Rapid Api, MediatR, Pivot Table, Trigger, Çoklu Dil Desteği
 
+### **Proje İçerisinden Görseller**
+
 ![1](https://github.com/melihdincer/TraversalCoreProje/assets/115299123/b90c128f-3869-4496-809a-82e54844f6a9)
 ![19](https://github.com/melihdincer/TraversalCoreProje/assets/115299123/820a5799-8b7a-4fdf-b00b-95118023bf69)
 ![18](https://github.com/melihdincer/TraversalCoreProje/assets/115299123/293a348d-9795-4c57-a561-0713c6ebded0)
