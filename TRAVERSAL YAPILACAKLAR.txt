@@ -1,0 +1,12 @@
+TRAVERSAL PROJE ÖDEVLER:
+
+1- CityController da yaptığımız ajax işlemlerinde SİLME işlemi yapılırken ilgili ID değeri DB'de bulunmuyorsa hata mesajı yazılsın.
+2- Member/Dashboard/Index sayfasında sağdaki küçük kısımda rehberlerin her birinin kendi profil sayfası bulunsun ve onlara yönlendirme yapılsın. 
+Rehber sayfasındaki rehberlerin bilgilerinin yer aldığı küçük bilgilerden oluşan bir sayfa.
+3- Dil desteği kontrol edilecek.
+4-Kayıt olma işleminde şartları okudum kısmı çalışmıyor. O işaretlenmeden kayıt yapılmasın. İşaretlenmediği takdirde hata mesajı versin.
+5-Member panelde "MyComment" sayfası yapılacak. Kullanıcının yapmış olduğu kendı yorumlarını görecek, belki güncellemek silmek ister.
+
+
+
+

@@ -40,7 +40,7 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
             //SmptClient => Simple Mail Transfer Protokol Sunucusu
             SmtpClient client = new SmtpClient();
             client.Connect("smtp.gmail.com", 587, false);
-            client.Authenticate("traversal.project@gmail.com", "qlowczyubagyyjee"); // Alıcı maili,gmailde oluşturduğumuz uygulama şifresi
+            client.Authenticate("traversal.project@gmail.com", "cwtrinytpkkiencz"); // Alıcı maili,gmailde oluşturduğumuz uygulama şifresi
             client.Send(mimeMessage);
             client.Disconnect(true);
             return View();
